@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Locutorio Castelar - El Primer Locutorio desde 2001</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Locutorio Castelar - El primer locutorio desde 2001. Impresiones por WhatsApp, trámites ANSES VTV, carga SUBE, PC por hora, cabina telefónica, fotocopias. Av. Rivadavia 20030.">
+    <meta name="keywords" content="locutorio castelar, imprimir castelar, fotocopias castelar, carga sube castelar, trámites anses castelar, ciber castelar, kiosco castelar">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+        .franja-historia { background: #8BC34A; color: #1E3A8A; padding: 10px; text-align: center; font-weight: bold; }
+        .header { background: #1E3A8A; color: white; padding: 20px 15px; text-align: center; }
+        .header h1 { margin: 0; font-size: 28px; }
+        .subtitulo { margin: 8px 0; font-size: 14px; font-style: italic; }
+        
+        /* MENÚ DE SOLAPAS */
+        .menu { background: #0D47A1; display: flex; justify-content: center; flex-wrap: wrap; }
+        .menu button { background: #0D47A1; color: white; border: none; padding: 15px 20px; cursor: pointer; font-size: 16px; }
+        .menu button.activo { background: #8BC34A; color: #1E3A8A; font-weight: bold; }
+        .menu button:hover { background: #1565C0; }
+        
+        .destacado { background: #8BC34A; color: #1E3A8A; padding: 12px; text-align: center; font-size: 18px; font-weight: bold; }
+        .sube { background: #FFD700; color: #1E3A8A; padding: 12px; text-align: center; font-size: 20px; font-weight: bold; }
+        .whatsapp { background: #25D366; color: white; padding: 18px; display: block; text-align: center; font-size: 20px; text-decoration: none; font-weight: bold; }
+        
+        .contenido { display: none; padding: 20px; max-width: 1000px; margin: auto; background: white; min-height: 400px; }
+        .contenido.activo { display: block; }
+        
+        /* CATÁLOGO DE PRODUCTOS */
+        .productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .producto { border: 2px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; }
+        .producto img { width: 100%; max-width: 150px; height: 150px; object-fit: contain; }
+        .precio { color: #1E3A8A; font-size: 24px; font-weight: bold; margin: 10px 0; }
+        .btn-agregar { background: #8BC34A; color: #1E3A8A; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 5px; width: 100%; }
+        .btn-agregar:hover { background: #7CB342; }
+        
+        /* CARRITO */
+        #carrito { position: fixed; bottom: 20px; right: 20px; background: #1E3A8A; color: white; padding: 15px; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.3); font-weight: bold; }
+        #modal-carrito { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; }
+        #modal-contenido { background: white; margin: 50px auto; padding: 20px; max-width: 500px; border-radius: 10px; }
+        .item-carrito { border-bottom: 1px solid #ddd; padding: 10px 0; display: flex; justify-content: space-between; }
+        .total { font-size: 22px; font-weight: bold; text-align: right; margin-top: 15px; color: #1E3A8A; }
+        .btn-whatsapp-pedido { background: #25D366; color: white; padding: 15px; width: 100%; border: none; font-size: 18px; font-weight: bold; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+        .cerrar { float: right; font-size: 28px; cursor: pointer; }
+        
+        .horario { background: #1E3A8A; color: white; padding: 15px; text-align: center; margin-top: 20px; border-radius: 8px; }
+        .footer { text-align: center; padding: 20px; color: #555; }
+    </style>
+</head>
+<body>
+    <div class="franja-historia">
+        EL PRIMER LOCUTORIO DE CASTELAR • DESDE 2001 FRENTE AL SARMIENTO
+    </div>
+    
+    <div class="header">
+        <h1>LOCUTORIO CASTELAR</h1>
+        <p class="subtitulo">cumplimos 25 años en Castelar gracias a la confianza</p>
+    </div>
+
+    <!-- MENÚ DE SOLAPAS -->
+    <div class="menu">
+        <button class="tab activo" onclick="abrirSolapa('inicio')">Inicio</button>
+        <button class="tab" onclick="abrirSolapa('servicios')">Trámites y Servicios</button>
+        <button class="tab" onclick="abrirSolapa('accesorios')">Accesorios Celulares</button>
+        <button class="tab" onclick="abrirSolapa('kiosco')">Kiosco</button>
+        <button class="tab" onclick="abrirSolapa('contacto')">Contacto</button>
+    </div>
+    
+    <div class="destacado">
+        Impresiones - Escaneos - Fotocopias y mucho más
+    </div>
+    
+    <div class="sube">
+        SUBE - CARGA VIRTUAL
+    </div>
+    
+    <a class="whatsapp" href="https://wa.me/541158836408?text=Hola!%20Quiero%20consultar%20por%20impresiones%20o%20tr%C3%A1mites">
+        📱 Imprimí por WhatsApp: 11-5883-6408
+    </a>
+
+    <!-- SOLAPA INICIO -->
+    <div id="inicio" class="contenido activo">
+        <h2>Bienvenidos al primer locutorio de Castelar</h2>
+        <p>Desde 2001 estamos en Av. Rivadavia 20030 frente a la estación Sarmiento. Empezamos con cabinas telefónicas y hoy resolvemos todos tus trámites.</p>
+        <h3>Lo más pedido:</h3>
+        <ul>
+            <li><strong>Cabina telefónica - Únicos en la zona</strong></li>
+            <li><strong>Trámites Online:</strong> ANSES, VTV, DNI, turnos</li>
+            <li><strong>Actualizamos boletas</strong> para Rapipago, Pagofácil, Bapro</li>
+            <li><strong>Carga SUBE</strong> + venta de tarjetas</li>
+            <li><strong>PC por hora:</strong> Armá tu CV, escaneá</li>
+        </ul>
+        <div class="horario">
+            <strong>HORARIO:</strong> Lun a Vie 9-15 y 16:30-20hs | <strong>Sábados: 9-13:30hs</strong>
+        </div>
+    </div>
+
+    <!-- SOLAPA SERVICIOS -->
+    <div id="servicios" class="contenido">
+        <h2>Trámites y Servicios</h2>
+        <ul>
+            <li><strong>Trámites Online:</strong> ANSES, VTV, DNI, turnos</li>
+            <li><strong>Actualizamos boletas de servicios e impuestos</strong> para abonar en: Rapipago, Pagofácil, Bapro, etc.</li>
+            <li><strong>Carga SUBE</strong> + venta de tarjetas</li>
+            <li><strong>PC por hora:</strong> Armá tu CV, escaneá, navegá</li>
+            <li><strong>Cabina telefónica - Únicos en la zona</strong></li>
+            <li><strong>Impresiones, escaneos, fotocopias</strong> color y B/N</li>
+        </ul>
+        <p><strong>¿Necesitás imprimir?</strong> Mandanos el archivo por WhatsApp y retirá en 5 min.</p>
+    </div>
+
+    <!-- SOLAPA ACCESORIOS -->
+    <div id="accesorios" class="contenido">
+        <h2>Accesorios para Celulares</h2>
+        <p>Elegí y agregá al carrito. Te mandamos el pedido por WhatsApp para coordinar retiro.</p>
+        <div class="productos">
+            <div class="producto">
+                <h3>Cargador Samsung 45W</h3>
+                <div class="precio">$25.000</div>
+                <button class="btn-agregar" onclick="agregarCarrito('Cargador Samsung 45W', 25000)">Agregar al pedido</button>
+            </div>
+            <div class="producto">
+                <h3>Cable USB-C 2.4A</h3>
+                <div class="precio">$4.500</div>
+                <button class="btn-agregar" onclick="agregarCarrito('Cable USB-C 2.4A', 4500)">Agregar al pedido</button>
+            </div>
+            <div class="producto">
+                <h3>Auriculares Inalámbricos</h3>
+                <div class="precio">$18.000</div>
+                <button class="btn-agregar" onclick="agregarCarrito('Auriculares Inalámbricos', 18000)">Agregar al pedido</button>
+            </div>
+            <div class="producto">
+                <h3>Soporte Auto Magnético</h3>
+                <div class="precio">$8.500</div>
+                <button class="btn-agregar" onclick="agregarCarrito('Soporte Auto Magnético', 8500)">Agregar al pedido</button>
+            </div>
+            <div class="producto">
+                <h3>Cargador Auto 3.1A</h3>
+                <div class="precio">$14.000</div>
+                <button class="btn-agregar" onclick="agregarCarrito('Cargador Auto 3.1A', 14000)">Agregar al pedido</button>
+            </div>
+            <div class="producto">
+                <h3>Cable Pro21 Reforzado</h3>
+                <div class="precio">$3.500</div>
+                <button class="btn-agregar" onclick="agregarCarrito('Cable Pro21 Reforzado', 3500)">Agregar al pedido</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOLAPA KIOSCO -->
+    <div id="kiosco" class="contenido">
+        <h2>Kiosco</h2>
+        <p><strong>Bebidas • Cigarrillos • Tabacos • Golosinas • Galletitas</strong></p>
+        <p>Consultá stock por WhatsApp antes de venir. Precios en el local.</p>
+        <ul>
+            <li>Bebidas frías: Coca, Pepsi, Agua, Jugos</li>
+            <li>Cigarrillos: Todas las marcas</li>
+            <li>Tabaco para armar</li>
+            <li>Golosinas, chocolates, alfajores</li>
+            <li>Galletitas y snacks</li>
+        </ul>
+    </div>
+
+    <!-- SOLAPA CONTACTO -->
+    <div id="contacto" class="contenido">
+        <h2>Contacto y Ubicación</h2>
+        <p><strong>Dirección:</strong> Av. Rivadavia 20030, Castelar Sur - Frente estación Sarmiento</p>
+        <p><strong>WhatsApp:</strong> 11-5883-6408</p>
+        <p><strong>Mail:</strong> locutoriocastelar@yahoo.com.ar</p>
+        <div class="horario">
+            <strong>HORARIO:</strong><br>
+            Lunes a Viernes: 9-15hs y 16:30-20hs<br>
+            <strong>Sábados: 9-13:30hs</strong>
+        </div>
+        <p><strong>Medios de pago:</strong> Efectivo, Transferencia, Débito</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.7!2d-58.641!3d-34.653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM5JzEwLjgiUyA1OMKwMzgnMjcuNiJX!5e0!3m2!1ses!2sar!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- BOTÓN CARRITO FLOTANTE -->
+    <div id="carrito" onclick="abrirCarrito()">
+        🛒 Pedido (<span id="cantidad-carrito">0</span>)
+    </div>
+
+    <!-- MODAL CARRITO -->
+    <div id="modal-carrito">
+        <div id="modal-contenido">
+            <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+            <h2>Tu Pedido</h2>
+            <div id="items-carrito"></div>
+            <div class="total">Total: $<span id="total-carrito">0</span></div>
+            <button class="btn-whatsapp-pedido" onclick="enviarPedidoWhatsApp()">Enviar Pedido por WhatsApp</button>
+            <p style="font-size: 14px; text-align: center;">Coordinamos pago y retiro por WhatsApp</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>25 años gracias a los vecinos de Castelar</p>
+    </div>
+
+    <script>
+        let carrito = [];
+        
+        // CAMBIAR DE SOLAPA
+        function abrirSolapa(nombreSolapa) {
+            let contenidos = document.getElementsByClassName("contenido");
+            for (let i = 0; i < contenidos.length; i++) {
+                contenidos[i].classList.remove("activo");
+            }
+            let tabs = document.getElementsByClassName("tab");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("activo");
+            }
+            document.getElementById(nombreSolapa).classList.add("activo");
+            event.currentTarget.classList.add("activo");
+        }
+        
+        // AGREGAR AL CARRITO
+        function agregarCarrito(nombre, precio) {
+            carrito.push({nombre: nombre, precio: precio});
+            actualizarCarrito();
+            alert(nombre + " agregado al pedido!");
+        }
+        
+        // ACTUALIZAR CARRITO
+        function actualizarCarrito() {
+            document.getElementById("cantidad-carrito").innerText = carrito.length;
+            let itemsHTML = "";
+            let total = 0;
+            carrito.forEach((item, index) => {
+                itemsHTML += `<div class="item-carrito">
+                    <span>${item.nombre}</span>
+                    <span>$${item.precio} <button onclick="eliminarItem(${index})">X</button></span>
+                </div>`;
+                total += item.precio;
+            });
+            document.getElementById("items-carrito").innerHTML = itemsHTML || "<p>No hay productos en el pedido</p>";
+            document.getElementById("total-carrito").innerText = total;
+        }
+        
+        // ELIMINAR ITEM
+        function eliminarItem(index) {
+            carrito.splice(index, 1);
+            actualizarCarrito();
+        }
+        
+        // ABRIR/CERRAR CARRITO
+        function abrirCarrito() {
+            document.getElementById("modal-carrito").style.display = "block";
+            actualizarCarrito();
+        }
+        function cerrarCarrito() {
+            document.getElementById("modal-carrito").style.display = "none";
+        }
+        
+        // ENVIAR PEDIDO POR WHATSAPP
+        function enviarPedidoWhatsApp() {
+            if (carrito.length === 0) {
+                alert("Tu pedido está vacío");
+                return;
+            }
+            let mensaje = "Hola! Quiero hacer este pedido:%0A";
+            let total = 0;
+            carrito.forEach(item => {
+                mensaje += `- ${item.nombre}: $${item.precio}%0A`;
+                total += item.precio;
+            });
+            mensaje += `%0ATotal: $${total}%0A`;
+            mensaje += "¿Cuándo puedo pasar a retirarlo?";
+            window.open(`https://wa.me/541158836408?text=${mensaje}`, '_blank');
+        }
+        
+        // Cerrar modal si toca afuera
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("modal-carrito")) {
+                cerrarCarrito();
+            }
+        }
+    </script>
+</body>
+</html>
